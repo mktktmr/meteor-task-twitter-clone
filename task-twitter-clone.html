@@ -4,8 +4,14 @@
 
 <body>
   <h1>Welcome to Makkoter!</h1>
+  
+  <div>
+    {{> loginButtons}}
+  </div>
 
-  {{> hello}}
+  {{#if currentUser}}
+    {{> hello}}
+  {{/if}}
 </body>
 
 <template name="hello">
