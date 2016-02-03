@@ -1,20 +1,24 @@
 <head>
-  <title>Makkoter</title>
+  <title>Twitter Clone</title>
 </head>
 
 <body>
-  <h1>Welcome to Makkoter!</h1>
+  <h1>Twitter Clone</h1>
   
   <div>
     {{> loginButtons}}
   </div>
 
   {{#if currentUser}}
-    {{> hello}}
+    {{> postForm}}
   {{/if}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="postForm">
+  <div>
+    <form class="new-post">
+      <input type="text">
+      <button type="submit">post</button>
+    </form>
+  </div>
 </template>
