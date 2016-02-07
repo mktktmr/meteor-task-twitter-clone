@@ -11,7 +11,17 @@
 
   {{#if currentUser}}
     {{> postForm}}
+
+    <hr style="border-top: 4px double">
+
+    <ul class="posts">
+      {{#each posts}}
+        {{> post}}
+      {{/each}}
+    </ul>
+
   {{/if}}
+
 </body>
 
 <template name="postForm">
@@ -21,4 +31,8 @@
       <button type="submit">post</button>
     </form>
   </div>
+</template>
+
+<template name="post">
+  <li>{{text}} by {{auther}}</li>
 </template>

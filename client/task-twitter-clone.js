@@ -1,11 +1,16 @@
-// counter starts at 0
-Session.setDefault('counter', 0);
+Meteor.subscribe('posts');
 
-Template.postForm.helpers({
+Template.body.helpers({
+    posts : function() {
+        return Posts.find({});
+    }
 });
 
 Template.postForm.events({
     'submit .new-post': function (event, template) {
-        alert(template.find('input[type="text"]').value);
+        var message = template.find('input[type="text"]').value;
+        Meteor.call("insertMessage", message);
     }
 });
+
+
